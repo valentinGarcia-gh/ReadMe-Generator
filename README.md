@@ -2,7 +2,9 @@
 ## Title
     Read Me Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Link to tutorial video: https://drive.google.com/file/d/1JUfZHPOrlvL07zSv5_7lKEWMMuCwhDM8/view?usp=sharing
 
 ## Table of Contents:
 - [Description](#Description)  
@@ -14,30 +16,29 @@
 
 ## Description
         
-    This project asks the user a series of questions and takes the answers and makes a read me for them
+    This project asks the user a series of questions and then takes those answers and generates a read me
 
 ## Installation
 
-    Install inquirer package from npm and you should then be able to just run this in node
+    Install the inquirer package from npm and you should then be able to run in node
 
 ## UsageInformation
 
-    run index.js in node and answer the questions asked.
+    Run index.js in node and answer the questions asked
 
 ## Contributions
 
-    Any suggestions are welcome. Clone or pull request and open an issue for any big changes.
+    Any suggestions are welcome. Clone or pull this repo and build on it to make it better
 
 ## TestInstructions
 
-    Please do not commit to main. Create a branch and test your changes. Have fun
+    Please do not commit to main. Create a branch and have fun
 
 ## Questions
 
-    // undefined
-    Any questions? Please feel free to follow me on GitHub
+Any questions? Please feel free to follow me on GitHub
     https://github.com/valentinGarcia-gh
 
-    Or drop me a message via email @
+Or drop me a message via email @
     vgarcia0587@icloud.com
         

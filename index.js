@@ -6,48 +6,48 @@ const fs = require('fs');
 const arrayOfQuestions = [
     {
         type: 'input',
-        message: "Please enter the title for your project: ",
+        message: "Please enter the title for your project:",
         name: "projectTitle",
     },
     {
         type: 'description',
-        message: "Please enter a description for your project: ",
+        message: "Please enter a description for your project:",
         name: "projectDescription",
     },
     {
         type: 'input',
-        message: "What are the installation instructions for your project? ",
+        message: "What are the installation instructions for your project?",
         name: "installationIns",
     },
     {
         type: 'input',
-        message: "What is the usage information for your project? ",
+        message: "What is the usage information for your project?",
         name: "usageInfo",
     },
     {
         type: 'input',
-        message: "What are the contribution guidelines for this project? ",
+        message: "What are the contribution guidelines for this project?",
         name: "contributions",
     },
     {
         type: 'input',
-        message: "Please enter the test instructions: ",
+        message: "Please enter the test instructions:",
         name: "testIns",
     },
     {
         type: 'list',
-        message: "Please choose one of the following licenses: ",
+        message: "Please choose one of the following licenses:",
         name: "licenseType",
         choices: ["Apache-2.0", "BSD-3-Clause", "ISC", "MIT"]
     },
     {
         type: 'input',
-        message: "Please enter your GitHub username: ",
+        message: "Please enter your GitHub username:",
         name: "userName",
     },
     {
         type: 'input',
-        message: "Please enter your email: ",
+        message: "Please enter your email:",
         name: "email",
     }
 ];
@@ -119,11 +119,10 @@ ${licenseType(answers.licenseType)}
 
 ## Questions
 
-    // ${answers.projectDescription}
-    Any questions? Please feel free to follow me on GitHub
+Any questions? Please feel free to follow me on GitHub
     https://github.com/${answers.userName}
 
-    Or drop me a message via email @
+Or drop me a message via email @
     ${answers.email}
         `
         )
