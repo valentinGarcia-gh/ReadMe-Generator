@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+
 // Array of questions for user input
 const arrayOfQuestions = [
     {
@@ -38,7 +39,7 @@ const arrayOfQuestions = [
         type: 'list',
         message: "Please choose one of the following licenses: ",
         name: "licenseType",
-        choices: ["Apache-2.0", "APSL-2.0", "ISC", "MIT"]
+        choices: ["Apache-2.0", "BSD-3-Clause", "ISC", "MIT"]
     },
     {
         type: 'input',
@@ -53,65 +54,87 @@ const arrayOfQuestions = [
 ];
 console.log(arrayOfQuestions)
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+// Creates function to write README file
+// function writeFile(fileName, answers) { }
 
+function licenseType (type){
+    let licenseUrl = "";
+    
+    switch (type) {
+        case "Apache-2.0":
+            licenseUrl =  "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"            
+            break;
+        case "BSD-3-Clause":
+            licenseUrl =  "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"            
+            break;
+        case "ISC":
+            licenseUrl =  "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"            
+            break;
+        case "MIT":
+            licenseUrl =  "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"            
+            break;
+        default:
+            licenseUrl =  "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
+            break;
+    }
+    return licenseUrl;
+}
 
-// TODO: Create a function to initialize app
-function init() { }
+// Creates function to initialize app
+function init() {
 
-inquirer.prompt(arrayOfQuestions).then((answers) =>
+    inquirer.prompt(arrayOfQuestions).then((answers) =>
 
-    createReadMe(
-        `
-        ## Title
-            ${answers.projectTitle}
+        createReadMe(
+`
+## Title
+    ${answers.projectTitle}
 
-        ![License](${answers.licenseType})
-        (https://opensource.org/licenses/${answers.licenseType})
+${licenseType(answers.licenseType)}
 
-        ## Table of Contents:
-         - [Description](#Description)  
-         - [Installation](#Installation)  
-         - [Usage Information](#Usage Information)  
-         - [Contributions](#Contributions)  
-         - [Test Instructions](#Test Instructions)  
-         - [Questions](#Questions)  
+## Table of Contents:
+- [Description](#Description)  
+- [Installation](#Installation)  
+- [Usage Information](#UsageInformation)  
+- [Contributions](#Contributions)  
+- [Test Instructions](#TestInstructions)  
+- [Questions](#Questions)  
 
-        ## Description
+## Description
         
-            ${answers.projectDescription}
- 
-        ## Installation
+    ${answers.projectDescription}
 
-            ${answers.installationIns}
- 
-        ## UsageInformation
+## Installation
 
-            ${answers.usageInfo}
- 
-        ## Contributions
+    ${answers.installationIns}
 
-            ${answers.contributions}
- 
-        ## TestInstructions
-        
-            ${answers.testIns}
- 
-        ## Questions
+## UsageInformation
 
-            // ${answers.description}
-            Any questions? Please feel free to follow me on GitHub
-            https://github.com/${answers.userName}
+    ${answers.usageInfo}
 
-            Or drop me a message via email @
-            ${answers.email}
+## Contributions
+
+    ${answers.contributions}
+
+## TestInstructions
+
+    ${answers.testIns}
+
+## Questions
+
+    // ${answers.description}
+    Any questions? Please feel free to follow me on GitHub
+    https://github.com/${answers.userName}
+
+    Or drop me a message via email @
+    ${answers.email}
         `
-    )
-);
+        )
+    );
+}
 
 function createReadMe(input) {
-    fs.writeFile(`${'README'}.md`, input, (err) =>
+    fs.writeFile("README.md", input, (err) =>
         err ? console.error(err) : console.log('Success!')
     )
 }
