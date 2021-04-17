@@ -70,29 +70,35 @@ inquirer.prompt(arrayOfQuestions).then((answers) =>
         ![License](${answers.licenseType})
 
         ## Table of Contents:
-         - [Description](#Description)  
-         - [Installation](#Installation)  
-         - [Usage Information](#UsageInformation)  
-         - [Contributions](#Contributions)  
-         - [Test Instructions](#TestInstructions)  
-         - [Questions](#Questions)  
+         - [Description](##Description)  
+         - [Installation](##Installation)  
+         - [Usage Information](##Usage Information)  
+         - [Contributions](##Contributions)  
+         - [Test Instructions](##Test Instructions)  
+         - [Questions](##Questions)  
 
-        #Description
+        ## Description
+        
             ${answers.projectDescription}
  
-        #Installation
+        ## Installation
+
             ${answers.installationIns}
  
-        #UsageInformation
+        ## UsageInformation
+
             ${answers.usageInfo}
  
-        #Contributions
+        ## Contributions
+
             ${answers.contributions}
  
-        #TestInstructions
+        ## TestInstructions
+        
             ${answers.testIns}
  
-        #Questions
+        ## Questions
+
             // ${answers.description}
             Any questions? Please feel free to follow me on GitHub
             https://github.com/${answers.userName}
