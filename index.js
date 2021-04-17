@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-
 // Array of questions for user input
 const arrayOfQuestions = [
     {
@@ -54,9 +53,7 @@ const arrayOfQuestions = [
 ];
 console.log(arrayOfQuestions)
 
-// Creates function to write README file
-// function writeFile(fileName, answers) { }
-
+// Function that renders licenses 
 function licenseType (type){
     let licenseUrl = "";
     
@@ -122,7 +119,7 @@ ${licenseType(answers.licenseType)}
 
 ## Questions
 
-    // ${answers.description}
+    // ${answers.projectDescription}
     Any questions? Please feel free to follow me on GitHub
     https://github.com/${answers.userName}
 
@@ -133,6 +130,7 @@ ${licenseType(answers.licenseType)}
     );
 }
 
+// function that writes read me 
 function createReadMe(input) {
     fs.writeFile("README.md", input, (err) =>
         err ? console.error(err) : console.log('Success!')
