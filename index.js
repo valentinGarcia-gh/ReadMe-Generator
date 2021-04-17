@@ -64,18 +64,19 @@ inquirer.prompt(arrayOfQuestions).then((answers) =>
 
     createReadMe(
         `
-        # Title
+        ## Title
             ${answers.projectTitle}
 
         ![License](${answers.licenseType})
+        (https://opensource.org/licenses/${answers.licenseType})
 
         ## Table of Contents:
-         - [Description](##Description)  
-         - [Installation](##Installation)  
-         - [Usage Information](##Usage Information)  
-         - [Contributions](##Contributions)  
-         - [Test Instructions](##Test Instructions)  
-         - [Questions](##Questions)  
+         - [Description](#Description)  
+         - [Installation](#Installation)  
+         - [Usage Information](#Usage Information)  
+         - [Contributions](#Contributions)  
+         - [Test Instructions](#Test Instructions)  
+         - [Questions](#Questions)  
 
         ## Description
         
